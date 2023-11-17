@@ -6,9 +6,9 @@
  */
 int main(int argc, char argv[])
 {
-	int file_stream;
+	FILE *file_stream;
 	char line;
-	ssize_t r_data;
+	ssize_t r_data = 0;
 
 	/*Checking if there is any file passed */
 	if (!argv[])
