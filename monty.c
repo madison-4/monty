@@ -4,6 +4,7 @@
  * @argc: Argument count
  * @argv[]: argument vector
  */
+void printall(stack_t **head, unsigned int line_no);
 int main(int argc, char *argv[])
 {
 	FILE *file_stream;
