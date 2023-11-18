@@ -38,18 +38,16 @@ stack_t *add(stack_t **head, int n)
 /**
  * printall - print all elements of a linked list
  * @head: head of the list
+ * @line_no: The line number 
  * Return: number of nodes printed
  */
-unsigned int printall(stack_t **head)
+void printall(stack_t **head, unsigned int line_no)
 {
-	stack_t *iter = *head;
-	unsigned int count = 0;
-
-	while (iter)
+	stack_t *current = *head;
+	(void) line_no;
+	while (current)
 	{
-		printf("%d\n", iter->n);
-		iter = iter->next;
-		count++;
+		printf("%d\n", current->n);
+		current = current->next;
 	}
-	return (count);
 }
