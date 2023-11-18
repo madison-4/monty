@@ -26,7 +26,10 @@ stack_t *add(stack_t **head, int n)
 	stack_t *iter = *head, *new;
 	new = malloc(sizeof(stack_t));
 	if (!(new))
-		return (NULL);
+	{
+		printf("Error\n");
+		exit(0);
+	}
 	new->next = NULL;
 	new->n = n;
 	while (iter->next)
