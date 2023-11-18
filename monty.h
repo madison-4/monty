@@ -8,6 +8,7 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <sys/stat.h>
+#include <ctype.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -45,5 +46,6 @@ stack_t *remove_s(stack_t **head);
 void printall(stack_t **head, unsigned int line_no);
 stack_t *add(stack_t **head, int n);
 void (*get_opcodes(char* opcode))(stack_t **stack, unsigned int line_no);
+void push(stack_t **stack, unsigned int line_no, const char *arg);
 
-#endif
+#endif /* MONTY_H */ 

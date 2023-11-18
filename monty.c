@@ -11,7 +11,8 @@ int main(int argc, char *argv[])
 	size_t len = 0;
 	ssize_t r_data = 0;
 	unsigned int line_no = 0;
-	char *opcode = strtok(line,"\n\t\r;:");
+	char *opcode = strtok(line," \n\t\r;:");
+	/*char *arg = strtok(NULL," \t\n\r;:");*/
 	stack_t *stack = NULL;
 
 	/*Checking if there is any file passed */
@@ -43,6 +44,7 @@ int main(int argc, char *argv[])
 		if (opcode != NULL)
 		{
 			void (*op_func)(stack_t **, unsigned int) = get_opcodes(opcode);
+
 			if (op_func != NULL)
 			{
 				op_func(&stack, line_no);
