@@ -45,4 +45,34 @@ stack_t *remove_s(stack_t **head);
 unsigned int printall(stack_t **head);
 stack_t *add(stack_t **head, int n);
 
+
+/**
+ *struct monty_t - defines global variables
+ *@arg: argument passed
+ *@str: line pointer
+ *@file: file pointer
+ *@set_stack: set structures to stack or queue
+ */
+
+typedef struct monty_t
+{
+	char *arg;
+	char *str;
+	FILE *file;
+	int set_stack;
+} monty_s;
+
+extern monty_s monty;
+
+int execute(char *str, stack_t **head, unsigned int counter, FILE *file);
+void func_push(stack_t **head, unsigned  int line_number);
+void func_pint(stack_t **head, unsigned int line_number);
+void freelist(stack_t *head, unsigned int line_number);
+void func_pop(stack_t **head, unsigned int line_number);
+void func_swap(stack_t **head, unsigned int line_counter);
+void func_add(stack_t **head, unsigned int line_counter);
+void func_nop(stack_t **head, unsigned int line_number);
+void func_sub(stack_t **head, unsigned int line_counter);
+void func_mul(stack_t **head, unsigned int line_counter);
+
 #endif
