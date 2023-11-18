@@ -10,6 +10,8 @@
 #include <sys/stat.h>
 #include <ctype.h>
 
+#define _GNU_SOURCE
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -48,4 +50,33 @@ stack_t *add(stack_t **head, int n);
 void (*get_opcodes(char* opcode))(stack_t **stack, unsigned int line_no);
 void push(stack_t **stack, unsigned int line_no, const char *arg);
 
-#endif /* MONTY_H */ 
+/**
+ *struct monty_t - defines global variables
+ *@arg: argument passed
+ *@str: line pointer
+ *@file: file pointer
+ *@set_stack: set structures to stack or queue
+ */
+
+typedef struct monty_t
+{
+	char *arg;
+	char *str;
+	FILE *file;
+	int set_stack;
+} monty_s;
+
+extern monty_s monty;
+
+int execute(char *str, stack_t **head, unsigned int counter, FILE *file);
+void func_push(stack_t **head, unsigned  int line_number);
+void func_pint(stack_t **head, unsigned int line_number);
+void freelist(stack_t *head, unsigned int line_number);
+void func_pop(stack_t **head, unsigned int line_number);
+void func_swap(stack_t **head, unsigned int line_counter);
+void func_add(stack_t **head, unsigned int line_counter);
+void func_nop(stack_t **head, unsigned int line_number);
+void func_sub(stack_t **head, unsigned int line_counter);
+void func_mul(stack_t **head, unsigned int line_counter);
+
+#endif

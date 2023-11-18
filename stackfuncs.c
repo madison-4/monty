@@ -49,6 +49,20 @@ stack_t *add(stack_t **head, int n)
 	newnode->prev = temp;
 	temp->next = newnode;
 	return (temp->next);
+	stack_t *iter = *head, *new;
+	new = malloc(sizeof(stack_t));
+	if (!(new))
+	{
+		printf("Error\n");
+		exit(0);
+	}
+	new->next = NULL;
+	new->n = n;
+	while (iter->next)
+		iter = iter->next;
+	iter->next = new;
+	new->prev = iter;
+	return (new);
 }
 /**
  * printall - print all elements of a linked list
