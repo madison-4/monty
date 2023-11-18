@@ -42,8 +42,9 @@ typedef struct instruction_s
 extern stack_t *top;
 
 stack_t *remove_s(stack_t **head);
-unsigned int printall(stack_t **head);
+void printall(stack_t **head, unsigned int line_no);
 stack_t *add(stack_t **head, int n);
+void (*get_opcodes(char* opcode))(stack_t **stack, unsigned int line_no);
 
 
 /**
