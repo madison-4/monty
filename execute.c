@@ -1,5 +1,7 @@
 #include "monty.h"
 
+monty_s monty = {NULL, NULL, NULL, 0};
+
 /**
  * main - main function
  * @argc: argument count
