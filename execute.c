@@ -1,7 +1,5 @@
 #include "monty.h"
 
-monty_s monty = {NULL, NULL, NULL, 0};
-
 /**
  * main - main function
  * @argc: argument count
@@ -17,6 +15,7 @@ int main(int argc, char *argv[])
 	stack_t *stack = NULL;
 	ssize_t line = 1;
 	size_t size = 0;
+	monty_s monty = {NULL, NULL, NULL, 0};
 
 	if (argc != 2)
 	{
@@ -36,9 +35,7 @@ int main(int argc, char *argv[])
 		line = getline(&str, &size, file);
 		count++;
 		if (line > 0)
-		{
 			execute(str, &stack, count, file);
-		}
 		free(str);
 	}
 	freelist(&stack);
@@ -66,7 +63,7 @@ int execute(char *str, stack_t **head, unsigned int counter, FILE *file)
 		{"pall", _pall},
 		{"pint", _pint},
 		{"pop", _pop},
-		{"swap",_swap},
+		{"swap", _swap},
 		{"add", _add},
 		{"nop", _nop},
 		{"sub", _sub},

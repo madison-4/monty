@@ -76,4 +76,5 @@ void _sub(stack_t **head, unsigned int line_counter);
 void _mul(stack_t **head, unsigned int line_counter);
 void add_node(stack_t **head, int n);
 void _pall(stack_t **head, unsigned int count);
+
 #endif
