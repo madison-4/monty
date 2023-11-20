@@ -69,14 +69,14 @@ typedef struct monty_t
 extern monty_s monty;
 
 int execute(char *str, stack_t **head, unsigned int counter, FILE *file);
-void func_push(stack_t **head, unsigned  int line_number);
-void func_pint(stack_t **head, unsigned int line_number);
-void freelist(stack_t *head, unsigned int line_number);
-void func_pop(stack_t **head, unsigned int line_number);
-void func_swap(stack_t **head, unsigned int line_counter);
-void func_add(stack_t **head, unsigned int line_counter);
-void func_nop(stack_t **head, unsigned int line_number);
-void func_sub(stack_t **head, unsigned int line_counter);
-void func_mul(stack_t **head, unsigned int line_counter);
+void _push(stack_t **head, unsigned  int line_number);
+void _pint(stack_t **head, unsigned int line_number);
+void freelist(stack_t **header);
+void _pop(stack_t **head, unsigned int line_number);
+void _swap(stack_t **head, unsigned int line_counter);
+void _add(stack_t **head, unsigned int line_counter);
+void _nop(stack_t **head, unsigned int line_number);
+void _sub(stack_t **head, unsigned int line_counter);
+void _mul(stack_t **head, unsigned int line_counter);
 
 #endif
