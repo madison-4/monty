@@ -29,16 +29,15 @@ void _sub(stack_t **head, unsigned int line_counter)
 	*head = (*head)->next;
 	free(temp);
 	add_node(head, result);
-
 }
 
 /**
- *func_mul - function that multiply nodes
+ *_mul - function that multiply nodes
  *@head: head pointer of the stack
  *@line_counter: line number
  */
 
-void func_mul(stack_t **head, unsigned int line_counter)
+void _mul(stack_t **head, unsigned int line_counter)
 {
 	stack_t *temp;
 	int res, len = 0;

@@ -31,7 +31,7 @@ void _swap(stack_t **head, unsigned int line_counter)
  * @line_counter: line number
  */
 
-void func_add(stack_t **head, unsigned int line_counter)
+void _add(stack_t **head, unsigned int line_counter)
 {
 	stack_t *temp;
 	int element;

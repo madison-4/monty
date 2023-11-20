@@ -70,7 +70,7 @@ int execute(char *str, stack_t **head, unsigned int counter, FILE *file)
 		{"add", _add},
 		{"nop", _nop},
 		{"sub", _sub},
-		{"mul", func_mul},
+		{"mul", _mul},
 		{NULL, NULL}
 	};
 
@@ -93,7 +93,7 @@ int execute(char *str, stack_t **head, unsigned int counter, FILE *file)
 		fprintf(stderr, "L%d: unknown instruction %s\n", counter, opt);
 		if (file)
 			fclose(file);
-		freelist(*head);
+		freelist(head);
 		exit(EXIT_FAILURE);
 	}
 	return (1);

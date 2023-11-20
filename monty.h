@@ -5,12 +5,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <sys/types.h>
-#include <sys/wait.h>
 #include <sys/stat.h>
 #include <ctype.h>
-
-#define _GNU_SOURCE
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -78,5 +74,6 @@ void _add(stack_t **head, unsigned int line_counter);
 void _nop(stack_t **head, unsigned int line_number);
 void _sub(stack_t **head, unsigned int line_counter);
 void _mul(stack_t **head, unsigned int line_counter);
-
+void add_node(stack_t **head, int n);
+void _pall(stack_t **head, unsigned int count);
 #endif
