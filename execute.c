@@ -17,7 +17,6 @@ int main(int argc, char *argv[])
 	stack_t *stack = NULL;
 	ssize_t line = 1;
 	size_t size = 0;
-	monty_s monty = {NULL, NULL, NULL, 0};
 
 	if (argc != 2)
 	{
